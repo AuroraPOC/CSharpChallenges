@@ -1,0 +1,12 @@
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\LinqChallengesFivePack.deps.json
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\LinqChallengesFivePack.dll
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\ref\LinqChallengesFivePack.dll
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\LinqChallengesFivePack.pdb
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.csproj.AssemblyReference.cache
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.GeneratedMSBuildEditorConfig.editorconfig
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.AssemblyInfoInputs.cache
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.AssemblyInfo.cs
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.csproj.CoreCompileInputs.cache
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.dll
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\ref\LinqChallengesFivePack.dll
+C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.pdb

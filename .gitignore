@@ -1,0 +1,16 @@
+
+LinqChallengesFivePack/.vs/LinqChallengesFivePack/v16/.suo
+LinqChallengesFivePack/.vs/LinqChallengesFivePack/v16/TestStore/0/000.testlog
+LinqChallengesFivePack/.vs/LinqChallengesFivePack/v16/TestStore/0/testlog.manifest
+LinqChallengesFivePack/LinqChallenge.Test/bin/Debug/net5.0/CoverletSourceRootsMapping
+LinqChallengesFivePack/LinqChallenge.Test/bin/Debug/net5.0/cs/Microsoft.TestPlatform.CommunicationUtilities.resources.dll
+*.dll
+LinqChallengesFivePack/LinqChallenge.Test/bin/Debug/net5.0/LinqChallenge.Test.deps.json
+*.cache
+*.json
+*.exe
+*.pdb
+LinqChallengesFivePack/LinqChallenge.Test/obj/Debug/net5.0/LinqChallenge.Test.csproj.CopyComplete
+LinqChallengesFivePack/LinqChallenge.Test/obj/Debug/net5.0/LinqChallenge.Test.csproj.FileListAbsolute.txt
+LinqChallengesFivePack/LinqChallenge.Test/obj/LinqChallenge.Test.csproj.nuget.g.props
+LinqChallengesFivePack/LinqChallengesFivePack/obj/LinqChallengesFivePack.csproj.nuget.g.props
