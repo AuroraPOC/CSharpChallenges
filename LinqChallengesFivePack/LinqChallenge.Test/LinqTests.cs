@@ -47,8 +47,42 @@ namespace LinqChallenge.Test
         public void CalculateAlbumTrackLengthSeconds()
         {
             var challenges = new LinqChallenges();
-            var sut = challenges.CalculateAlbumDuration();
+            var sut = challenges.CalculateAlbumDurationSeconds();
             Assert.AreEqual(sut, 100);
+        }
+
+        [TestMethod]
+        public void CalcuateGridPoints()
+        {
+            var challenges = new LinqChallenges();
+            var sut = challenges.CalculateMatrixPoints3x3();
+            var gridpoints = new List<string>()
+            {
+                "0,0",
+                "0,1",
+                "0,2",
+                "1,0",
+                "1,1",
+                "1,2",
+                "2,0",
+                "2,1",
+                "2,2"
+            };
+
+            CollectionAssert.AreEqual(sut, gridpoints);
+        }
+
+        [TestMethod]
+        public void GetRangesFromString()
+        {
+            var challenges = new LinqChallenges();
+            var answer = new List<int>()
+            {
+                2, 5, 7, 8, 9, 10, 11, 17, 18
+            };
+
+            var sut = challenges.GetRangesFromString();
+            CollectionAssert.AreEqual(answer, sut);
         }
 
 
