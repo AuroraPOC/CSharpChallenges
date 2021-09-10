@@ -33,7 +33,7 @@ namespace LinqChallenge.Test
             {
                 new Player(){ Name = "Jos Sagan", Birthday = new System.DateTime(1983, 4, 22)},
                 new Player(){ Name = "James Hansen", Birthday = new System.DateTime(1983, 10, 5)},
-                new Player(){ Name =  "Mariah Davis", Birthday = new System.DateTime(1985, 09, 08)},
+                new Player(){ Name = "Mariah Davis", Birthday = new System.DateTime(1985, 09, 08)},
                 new Player(){ Name = "Jeff Prosise", Birthday = new System.DateTime(1986, 04, 01)},
                 new Player(){ Name = "Ally Shaw", Birthday = new System.DateTime(1995, 12, 22)}
             };
@@ -48,7 +48,7 @@ namespace LinqChallenge.Test
         {
             var challenges = new LinqChallenges();
             var sut = challenges.CalculateAlbumDurationSeconds();
-            Assert.AreEqual(sut, 100);
+            Assert.AreEqual(sut, 2303);
         }
 
         [TestMethod]
@@ -84,6 +84,17 @@ namespace LinqChallenge.Test
             var sut = challenges.GetRangesFromString();
             CollectionAssert.AreEqual(answer, sut);
         }
+
+        //[TestMethod]
+        //public void EnsureLambdaLinqCalls()
+        //{
+        //    var file = CSharpSyntaxTree.ParseText(File.ReadAllText($"{ProjectSourcePath.Value}..\\LinqChallengesFivePack\\LinqChallenges.cs"));
+        //    var methodBody = file.GetRoot().DescendantNodes().OfType<MethodDeclarationSyntax>().Where(m => m.Identifier.Text == "PlayerAssignJersey").Select(i => i.Body);
+        //    var lambdaStatements = file.GetRoot().DescendantNodes().OfType<LambdaExpressionSyntax>();
+
+        //    var statements = string.Join("", methodBody.Select(s => s.Statements.ToFullString()));
+        //    Assert.IsTrue(statements.Contains("Split"));
+        //}
 
 
     }
