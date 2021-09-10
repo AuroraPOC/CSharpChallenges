@@ -25,8 +25,8 @@ namespace LinqChallengesFivePack
         //Return list of Players, sorted oldest to youngest
         public List<Player> PlayerAgeSort()
         {
-            //string represents a person and their date of birth
             var players = "Jeff Prosise, 04/01/1986; Jos Sagan, 04/22/1983; Mariah Davis, 09/08/1985; Ally Shaw, 12/22/1995; Hector Ramirez, 02/12/1991; James Hansen, 10/05/1983";
+
             return new List<Player>();
         }
 
@@ -34,7 +34,6 @@ namespace LinqChallengesFivePack
         public double CalculateAlbumDurationSeconds()
         {
             string albumTrackLengths = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
-            
             
             return 0;
         }
