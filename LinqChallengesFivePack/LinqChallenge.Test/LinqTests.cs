@@ -41,7 +41,9 @@ namespace LinqChallenge.Test
 
             var sut = challenges.PlayerAgeSort();
 
-            CollectionAssert.AreEqual(players, sut);
+            // without a custom comparer this was originally using Object.Equals which does not properly
+            // compare the 2 player objects and was causing the test to fail.
+            CollectionAssert.AreEqual(players, sut, new PlayerComparer());
         }
 
         [TestMethod]
