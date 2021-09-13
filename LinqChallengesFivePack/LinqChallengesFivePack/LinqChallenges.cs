@@ -26,7 +26,7 @@ namespace LinqChallengesFivePack
         public List<Player> PlayerAgeSort()
         {
             var players = "Jeff Prosise, 04/01/1986; Jos Sagan, 04/22/1983; Mariah Davis, 09/08/1985; Ally Shaw, 12/22/1995; Hector Ramirez, 02/12/1991; James Hansen, 10/05/1983";
-
+           
             return new List<Player>();
         }
 
@@ -63,5 +63,16 @@ namespace LinqChallengesFivePack
     {
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var player = obj as Player;
+            if (player == null)
+            {
+                return false;
+            }
+
+            return player.Name == Name && player.Birthday == Birthday;
+        }
     }
 }
