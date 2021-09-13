@@ -83,6 +83,17 @@ namespace LinqChallengesFivePack
     {
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var player = obj as Player;
+            if (player == null)
+            {
+                return false;
+            }
+
+            return player.Name == Name && player.Birthday == Birthday;
+        }
     }
 
     public class PlayerComparer : Comparer<Player>
