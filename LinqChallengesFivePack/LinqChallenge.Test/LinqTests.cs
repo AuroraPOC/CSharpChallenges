@@ -35,6 +35,7 @@ namespace LinqChallenge.Test
                 new Player(){ Name = "James Hansen", Birthday = new System.DateTime(1983, 10, 5)},
                 new Player(){ Name = "Mariah Davis", Birthday = new System.DateTime(1985, 09, 08)},
                 new Player(){ Name = "Jeff Prosise", Birthday = new System.DateTime(1986, 04, 01)},
+                new Player() {Name = "Hector Ramirez", Birthday = new System.DateTime(1991, 02, 12)},
                 new Player(){ Name = "Ally Shaw", Birthday = new System.DateTime(1995, 12, 22)}
             };
 
