@@ -35,12 +35,15 @@ namespace LinqChallenge.Test
                 new Player(){ Name = "James Hansen", Birthday = new System.DateTime(1983, 10, 5)},
                 new Player(){ Name = "Mariah Davis", Birthday = new System.DateTime(1985, 09, 08)},
                 new Player(){ Name = "Jeff Prosise", Birthday = new System.DateTime(1986, 04, 01)},
+                new Player(){ Name = "Hector Ramirez", Birthday = new System.DateTime(1991, 2, 12)}, // added missing person to the unit test
                 new Player(){ Name = "Ally Shaw", Birthday = new System.DateTime(1995, 12, 22)}
             };
 
             var sut = challenges.PlayerAgeSort();
 
-            CollectionAssert.AreEqual(players, sut);
+            // without a custom comparer this was originally using Object.Equals which does not properly
+            // compare the 2 player objects and was causing the test to fail.
+            CollectionAssert.AreEqual(players, sut, new PlayerComparer());
         }
 
         [TestMethod]
