@@ -36,7 +36,6 @@ namespace LinqChallengesFivePack
             })
             .OrderBy(p => p.Birthday)
             .ToList();
-
             return playerList;
         }
 
