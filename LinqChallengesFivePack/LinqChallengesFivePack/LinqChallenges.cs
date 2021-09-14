@@ -27,7 +27,7 @@ namespace LinqChallengesFivePack
         public List<Player> PlayerAgeSort()
         {
             var players = "Jeff Prosise, 04/01/1986; Jos Sagan, 04/22/1983; Mariah Davis, 09/08/1985; Ally Shaw, 12/22/1995; Hector Ramirez, 02/12/1991; James Hansen, 10/05/1983";
-            var xPlayers = players.Split(';').Select(x => x.Split(',')).Select(x => new Player() { Name = x[0], Birthday = DateTime.Parse(x[1].Trim()) }).OrderBy(x => x.Birthday).ToList();
+            var xPlayers = players.Split(';').Select(x => x.Split(',')).Select(x => new Player() { Name = x[0].Trim(), Birthday = DateTime.Parse(x[1].Trim()) }).OrderBy(x => x.Birthday).ToList();
             return xPlayers;
         }
 
@@ -45,8 +45,12 @@ namespace LinqChallengesFivePack
         //Output should be: "0,0" "0,1" "0,2" "1,0" "1,1" "1,2" "2,0" "2,1" "2,2"
         public List<string> CalculateMatrixPoints3x3()
         {
-            
-            return new List<string>();
+            int cols = 3;
+            int rows = 3;
+
+            var result = Enumerable.Range(0, cols).Select(x => Enumerable.Range(0, rows).Select(y => (x, y))).SelectMany(x => x).Select(x => $"{x.x},{x.y}").ToList();
+
+            return result;
         }
 
         //Given the input, return a collection of integers with the ranges filled in
@@ -54,11 +58,7 @@ namespace LinqChallengesFivePack
         public List<int> GetRangesFromString()
         {
             var input = "2,5,7-10,11,17-18";
-            //var x = input.Split(',').Select(x => x.Contains('-')
-            //? Enumerable.Range(int.Parse(x.Substring(0, x.IndexOf('-'))), int.Parse(x.Substring(x.IndexOf('-') + 1)) - int.Parse(x.Substring(0, x.IndexOf('-')))).Select(x=>x.ToString()).Aggregate((concat, str) => $"{concat},{str}")
-            //: x
-            //).Aggregate((concat, str) => $"{concat},{str}"); 
-
+            
             var x = input.Split(',').Select(x => x.Split('-')).Select(x => Enumerable.Range(int.Parse(x[0]), x.Length == 1 ? 1 : int.Parse(x[1]) - int.Parse(x[0]) + 1)).SelectMany(x => x).ToList();      
                   
             return x;
@@ -70,5 +70,16 @@ namespace LinqChallengesFivePack
     {
         public string Name { get; set; }
         public DateTime Birthday { get; set; }
+
+        public override bool Equals(object obj)
+        {
+            var player = obj as Player;
+            if (player == null)
+            {
+                return false;
+            }
+
+            return player.Name == Name && player.Birthday == Birthday;
+        }
     }
 }
