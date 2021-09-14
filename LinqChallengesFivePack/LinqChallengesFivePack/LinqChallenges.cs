@@ -17,26 +17,21 @@ namespace LinqChallengesFivePack
         public List<string> PlayerAssignJersey()
         {
             var players =  "Smith, Robinson, Saenz, Cabanig, Jefferson";
-            var numberedPlayers = players.Split(',').Select((x, index) => $"{index+1}. {x.Trim()}").ToList();
-
-            return numberedPlayers;
-            
+            return players.Split(',').Select((x, index) => $"{index+1}. {x.Trim()}").ToList();
         }
 
         //Return list of Players, sorted oldest to youngest
         public List<Player> PlayerAgeSort()
         {
             var players = "Jeff Prosise, 04/01/1986; Jos Sagan, 04/22/1983; Mariah Davis, 09/08/1985; Ally Shaw, 12/22/1995; Hector Ramirez, 02/12/1991; James Hansen, 10/05/1983";
-            var xPlayers = players.Split(';').Select(x => x.Split(',')).Select(x => new Player() { Name = x[0].Trim(), Birthday = DateTime.Parse(x[1].Trim()) }).OrderBy(x => x.Birthday).ToList();
-            return xPlayers;
+            return players.Split(';').Select(x => x.Split(',')).Select(x => new Player() { Name = x[0].Trim(), Birthday = DateTime.Parse(x[1].Trim()) }).OrderBy(x => x.Birthday).ToList();
         }
 
         //Calculate how long the album is, in seconds, given track lengths
         public double CalculateAlbumDurationSeconds()
         {
             string albumTrackLengths = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
-            var x = albumTrackLengths.Split(',').Select(x => x.Split(':')).Select(x => int.Parse(x[0]) * 60 + int.Parse(x[1])).Sum();
-            return x;
+            return albumTrackLengths.Split(',').Select(x => x.Split(':')).Select(x => int.Parse(x[0]) * 60 + int.Parse(x[1])).Sum();
         }
 
 
@@ -47,21 +42,15 @@ namespace LinqChallengesFivePack
         {
             int cols = 3;
             int rows = 3;
-
-            var result = Enumerable.Range(0, cols).Select(x => Enumerable.Range(0, rows).Select(y => (x, y))).SelectMany(x => x).Select(x => $"{x.x},{x.y}").ToList();
-
-            return result;
+            return Enumerable.Range(0, cols).SelectMany(x => Enumerable.Range(0, rows).Select(y => (x, y))).Select(x => $"{x.x},{x.y}").ToList();
         }
 
         //Given the input, return a collection of integers with the ranges filled in
         //Solution should be: 2, 5, 7, 8, 9, 10, 11, 17, 18
         public List<int> GetRangesFromString()
         {
-            var input = "2,5,7-10,11,17-18";
-            
-            var x = input.Split(',').Select(x => x.Split('-')).Select(x => Enumerable.Range(int.Parse(x[0]), x.Length == 1 ? 1 : int.Parse(x[1]) - int.Parse(x[0]) + 1)).SelectMany(x => x).ToList();      
-                  
-            return x;
+            var input = "2,5,7-10,11,17-18";            
+            return input.Split(',').Select(x => x.Split('-')).SelectMany(x => Enumerable.Range(int.Parse(x[0]), x.Length == 1 ? 1 : int.Parse(x[1]) - int.Parse(x[0]) + 1)).ToList();
         }
 
     }
