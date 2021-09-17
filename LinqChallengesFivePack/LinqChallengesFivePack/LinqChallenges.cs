@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace LinqChallengesFivePack
@@ -18,24 +19,44 @@ namespace LinqChallengesFivePack
         {
             var players =  "Smith, Robinson, Saenz, Cabanig, Jefferson";
 
-            return new List<string>();
-            
+            var result = players.Split(", ").Select((player, index) => $"{index + 1}. {player}").ToList();
+
+            return result;
         }
 
         //Return list of Players, sorted oldest to youngest
         public List<Player> PlayerAgeSort()
         {
             var players = "Jeff Prosise, 04/01/1986; Jos Sagan, 04/22/1983; Mariah Davis, 09/08/1985; Ally Shaw, 12/22/1995; Hector Ramirez, 02/12/1991; James Hansen, 10/05/1983";
-           
-            return new List<Player>();
+
+            var result = 
+                from tuple in players.Split("; ")
+                let separatorIndex = tuple.IndexOf(',', StringComparison.Ordinal)
+                select new Player
+                {
+                    Name = tuple[..separatorIndex],
+                    Birthday = DateTime.Parse(tuple[(separatorIndex + 1)..], CultureInfo.InvariantCulture)
+                }
+                into player
+                orderby player.Birthday
+                select player;
+
+            return result.ToList();
         }
 
         //Calculate how long the album is, in seconds, given track lengths
         public double CalculateAlbumDurationSeconds()
         {
             string albumTrackLengths = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
-            
-            return 0;
+
+            var times = 
+                from tuple in albumTrackLengths.Split(',')
+                let separatorIndex = tuple.IndexOf(':', StringComparison.Ordinal)
+                let minutes = int.Parse(tuple[..separatorIndex])
+                let seconds = int.Parse(tuple[(separatorIndex + 1)..])
+                select (double)minutes * 60 + seconds;
+
+            return times.Sum();
         }
 
 
@@ -44,8 +65,12 @@ namespace LinqChallengesFivePack
         //Output should be: "0,0" "0,1" "0,2" "1,0" "1,1" "1,2" "2,0" "2,1" "2,2"
         public List<string> CalculateMatrixPoints3x3()
         {
-            
-            return new List<string>();
+            var result =
+                from x in Enumerable.Range(0, 3)
+                from y in Enumerable.Range(0, 3)
+                select $"{x},{y}";
+
+            return result.ToList();
         }
 
         //Given the input, return a collection of integers with the ranges filled in
@@ -54,9 +79,17 @@ namespace LinqChallengesFivePack
         {  
             var input = "2,5,7-10,11,17-18";
 
-            return new List<int>();
-        }
+            var pairs =
+                from element in input.Split(',')
+                let separatorIndex = element.IndexOf('-')
+                let first = int.Parse(separatorIndex == -1 ? element : element[..separatorIndex])
+                let last = separatorIndex == -1 ? (int?)null : int.Parse(element[(separatorIndex + 1)..])
+                select last != null ? Enumerable.Range(first, last.Value - first + 1) : new[] { first };
 
+            var result = pairs.SelectMany(x => x).ToList();
+
+            return result;
+        }
     }
 
     public class Player
