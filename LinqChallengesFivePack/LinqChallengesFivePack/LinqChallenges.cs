@@ -58,7 +58,12 @@ namespace LinqChallengesFivePack
         public List<string> CalculateMatrixPoints3x3()
         {
 
-            return new List<string>();
+            var values = Enumerable.Range(0, 3)
+                .Select(x => Enumerable.Range(0, 3).Select(y => new { Row = x, Column = y }))
+                .Select(row => row.Select(p => $"{p.Row},{p.Column}"))
+                .SelectMany(p => p);
+
+            return values.ToList();
         }
 
         //Given the input, return a collection of integers with the ranges filled in
