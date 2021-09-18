@@ -28,15 +28,23 @@ namespace LinqChallengesFivePack
         public List<Player> PlayerAgeSort()
         {
             var players = "Jeff Prosise, 04/01/1986; Jos Sagan, 04/22/1983; Mariah Davis, 09/08/1985; Ally Shaw, 12/22/1995; Hector Ramirez, 02/12/1991; James Hansen, 10/05/1983";
-           
-            return new List<Player>();
+
+            return players
+                .Split(";")
+                .Select(playerInfo =>
+                {
+                    var details = playerInfo.Split(",");
+                    return new Player { Name = details[0].Trim(), Birthday = DateTime.Parse(details[1]) };
+                })
+                .OrderBy(player => player.Birthday)
+                .ToList();
         }
 
         //Calculate how long the album is, in seconds, given track lengths
         public double CalculateAlbumDurationSeconds()
         {
             string albumTrackLengths = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
-            
+
             return 0;
         }
 
@@ -46,7 +54,7 @@ namespace LinqChallengesFivePack
         //Output should be: "0,0" "0,1" "0,2" "1,0" "1,1" "1,2" "2,0" "2,1" "2,2"
         public List<string> CalculateMatrixPoints3x3()
         {
-            
+
             return new List<string>();
         }
 
