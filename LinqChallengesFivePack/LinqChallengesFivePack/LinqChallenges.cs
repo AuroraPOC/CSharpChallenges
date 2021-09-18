@@ -71,8 +71,16 @@ namespace LinqChallengesFivePack
         public List<int> GetRangesFromString()
         {
             var input = "2,5,7-10,11,17-18";
-
-            return new List<int>();
+            return input.Split(",")
+                .Select(r => r.Split("-"))
+                .Select(range =>
+                    range.Length == 1
+                        ? new { Start = int.Parse(range[0]), End = int.Parse(range[0]) }
+                        : new { Start = int.Parse(range[0]), End = int.Parse(range[1]) }
+                )
+                .Select(r => Enumerable.Range(r.Start, r.End - r.Start + 1))
+                .SelectMany(r => r)
+                .ToList();
         }
 
     }
