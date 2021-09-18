@@ -45,7 +45,10 @@ namespace LinqChallengesFivePack
         {
             string albumTrackLengths = "4:12,2:43,3:51,4:29,3:24,3:14,4:46,3:25,4:52,3:27";
 
-            return 0;
+            return albumTrackLengths
+                .Split(",")
+                .Select(track => TimeSpan.Parse($"00:{track}"))
+                .Sum(ts => ts.TotalSeconds);
         }
 
 
