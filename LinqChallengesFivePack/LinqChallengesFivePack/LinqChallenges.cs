@@ -16,10 +16,12 @@ namespace LinqChallengesFivePack
         //Challenge: Given a string of player names give each player a jersey # starting at 1 and return back in a List i.e. "1. Smith", "2. Robinson" etc..
         public List<string> PlayerAssignJersey()
         {
-            var players =  "Smith, Robinson, Saenz, Cabanig, Jefferson";
+            var players = "Smith, Robinson, Saenz, Cabanig, Jefferson";
 
-            return new List<string>();
-            
+            return players
+                .Split(",")
+                .Select((player, index) => $"{index + 1}. {player.Trim()}")
+                .ToList();
         }
 
         //Return list of Players, sorted oldest to youngest
@@ -51,7 +53,7 @@ namespace LinqChallengesFivePack
         //Given the input, return a collection of integers with the ranges filled in
         //Solution should be: 2, 5, 7, 8, 9, 10, 11, 17, 18
         public List<int> GetRangesFromString()
-        {  
+        {
             var input = "2,5,7-10,11,17-18";
 
             return new List<int>();
