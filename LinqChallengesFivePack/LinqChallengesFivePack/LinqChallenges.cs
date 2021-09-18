@@ -31,11 +31,8 @@ namespace LinqChallengesFivePack
 
             return players
                 .Split(";")
-                .Select(playerInfo =>
-                {
-                    var details = playerInfo.Split(",");
-                    return new Player { Name = details[0].Trim(), Birthday = DateTime.Parse(details[1]) };
-                })
+                .Select(playerInfo => playerInfo.Split(","))
+                .Select(details => new Player { Name = details[0].Trim(), Birthday = DateTime.Parse(details[1]) })
                 .OrderBy(player => player.Birthday)
                 .ToList();
         }
