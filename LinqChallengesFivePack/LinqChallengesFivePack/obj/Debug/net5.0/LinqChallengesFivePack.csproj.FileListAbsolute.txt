@@ -10,3 +10,15 @@ C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj
 C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.dll
 C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\ref\LinqChallengesFivePack.dll
 C:\Dev\Aurora\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.pdb
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\LinqChallengesFivePack.deps.json
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\LinqChallengesFivePack.dll
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\ref\LinqChallengesFivePack.dll
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\bin\Debug\net5.0\LinqChallengesFivePack.pdb
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.csprojAssemblyReference.cache
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.GeneratedMSBuildEditorConfig.editorconfig
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.AssemblyInfoInputs.cache
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.AssemblyInfo.cs
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.csproj.CoreCompileInputs.cache
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.dll
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\ref\LinqChallengesFivePack.dll
+C:\code\challenges\CSharpChallenges\LinqChallengesFivePack\LinqChallengesFivePack\obj\Debug\net5.0\LinqChallengesFivePack.pdb
